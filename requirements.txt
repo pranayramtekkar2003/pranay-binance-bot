@@ -1,0 +1,5 @@
+ipykernel
+python-binance
+python-dotenv
+colorlog
+schedule
