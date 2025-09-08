@@ -7,7 +7,7 @@ def setup_logger():
     logger = logging.getLogger('BinanceBot')
     logger.setLevel(logging.INFO)
 
-    logger.propagate = False        #prevention of log propagation in root folder
+    logger.propagate = False      #prevention of log propagation in root folder
 
     #Ensure the avoidance of logs duplication
     if logger.hasHandlers():
