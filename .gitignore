@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+
+# private and public key files
+private_key.txt
+public_key.txt
