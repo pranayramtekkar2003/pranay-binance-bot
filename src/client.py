@@ -19,4 +19,4 @@ def binance_client():
     client = Client(api_key, api_secret_key, testnet=True)
     log.info("Binance Client initalization successful.")
 
-    return Client
+    return Client(api_key=api_key,api_secret=api_secret_key,testnet=True)
