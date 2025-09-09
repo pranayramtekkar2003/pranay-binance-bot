@@ -28,7 +28,7 @@ def stop_limit_order(symbol,side,quantity,price,stop_price):
             timeInForce = 'GTC',
             quantity = quantity,
             price = price,
-            stop_price = stop_price,
+            stopPrice = stop_price,
         )
         log.info("Stop-Limit Order placed successfully.")
     except BinanceAPIException as e:
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("side",type = str,help = "BUY or SELL")
     parser.add_argument("quantity", type = float, help = "Order quantity")
     parser.add_argument("price",type = float, help = "The price at which limit order will be placed")
-    parser.add_argument("stop_price",type = float, help = "The price that triggers the limit order.")
+    parser.add_argument("stopPrice",type = float, help = "The price that triggers the limit order.")
 
     args = parser.parse_args()
-    stop_limit_order(args.symbol, args.side, args.quantity,args.price,args.stop_price)
+    stop_limit_order(args.symbol, args.side, args.quantity,args.price,args.stopPrice)
