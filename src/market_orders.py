@@ -32,14 +32,11 @@ def market_order(symbol, side, quantity):
 
     
 if __name__ == "__main__":
+ 
+    parser = argparse.ArgumentParser(description="Place a Binance Futures market order")
+    parser.add_argument('symbol',type=str, help='Trading symbol [Eg: BTCUSDT]')
+    parser.add_argument('side',type=str,choices=["BUY","SELL"],help="Order Side (BUY or SELL)")
+    parser.add_argument('quantity', type=float, help="Order quantity")
 
-    market_order('BTCUSDT', 'BUY', 0.001)    
-    
-    
-    # parser = argparse.ArgumentParser(description="Place a Binance Futures market order")
-    # parser.add_argument('symbol',type=str, help='Trading symbol [Eg: BTCUSDT]')
-    # parser.add_argument('side',type=str,choices=["BUY","SELL"],help="Order Side (BUY or SELL)")
-    # parser.add_argument('quantity', type=float, help="Order quantity")
-
-    # args = parser.parse_args()
-    # market_order(args.symbol, args.side, args.quantity)
+    args = parser.parse_args()
+    market_order(args.symbol, args.side, args.quantity)
