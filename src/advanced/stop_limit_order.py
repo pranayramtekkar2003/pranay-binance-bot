@@ -1,7 +1,6 @@
 # It seems the stop_limit order is NOT for the Spot Test Network.
 # Hence, no matter the number of parameter the transaction never goes through.
-# It will work one we switch out from the Spot Test Network.
-
+# This should work when we switch out from the test network.
 
 import argparse
 from binance.exceptions import BinanceAPIException
