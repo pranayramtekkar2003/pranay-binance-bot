@@ -22,8 +22,7 @@ def market_order(symbol, side, quantity):
             type = 'MARKET',
             quantity = quantity,
         )
-        log.info(f"Test Market Order Placed successfully. Order ID: {order}")
-        print(order)
+        log.info(f"Test Market Order Placed successfully.")
 
     except BinanceAPIException as e:
         log.error(f"Error placing market order for {symbol} : {e}")
