@@ -9,14 +9,16 @@ def binance_client():
     load_dotenv()
 
     api_key = os.getenv("API_KEY")
-    api_secret_key = os.getenv("API_SECRET_KEY")
+    private_key = os.getenv("PRIVATE_KEY")
 
     #Handling api key issue
-    if not api_key or not api_secret_key:
-        log.error("API Key and Secret are not set. Check or create the .env file.")
-        raise ValueError("API KEY/SECRET not found in .env file")
+    if not api_key or not private_key:
+        log.error("API Key and PRIVATE Key are not set. Check or create the .env file.")
+        raise ValueError("API KEY/PRIVATE KEY not found in .env file")
     
-    client = Client(api_key, api_secret_key, testnet=True)
-    log.info("Binance Client initalization successful.")
-
-    return Client(api_key=api_key,api_secret=api_secret_key,testnet=True)
+    try:
+        client = Client(api_key=api_key, private_key=private_key, testnet=True)
+        log.info("Binance Client initialised successfully.")
+        return client
+    except Exception as e:
+        log.error(f"Falied to initialise client. \n Error Message:{e}")
